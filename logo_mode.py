@@ -1,14 +1,14 @@
 from pico2d import *
+import game_framework
 
 img = None
-running = True
+
 logo_start_time = 0.0
 
 
-
 def init():
-    global img, running, logo_start_time
-
+    global img
+    global logo_start_time
     img = load_image('tuk_credit.png')
     running = True
     logo_start_time = get_time()
@@ -19,11 +19,10 @@ def finish():
     del img
 
 def update():
-    global running, logo_start_time
-    if get_time()-logo_start_time>=2.0:
+    global logo_start_time
+    if get_time() - logo_start_time >= 2.0:
         logo_start_time = get_time()
-        running = False
-
+        game_framework.quit()
 
 
 def handle_events():
