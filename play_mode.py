@@ -3,6 +3,7 @@ import game_framework
 import game_world
 import title_mode
 import pause_mode
+import item_mode
 from boy import Boy
 from grass import Grass
 
@@ -20,6 +21,9 @@ def handle_events():
         elif event.type == SDL_KEYDOWN and event.key == SDLK_p:
             # 일시정지: play_mode는 스택에 그대로 남겨 두고 pause_mode를 위에 올린다.
             game_framework.push_mode(pause_mode)
+        elif event.type == SDL_KEYDOWN and event.key == SDLK_i:
+            # 아이템 선택: pause_mode와 같은 방식으로 item_mode를 위에 올린다.
+            game_framework.push_mode(item_mode)
         else:
             boy.handle_event(event)
 
