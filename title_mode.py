@@ -1,5 +1,6 @@
 from pico2d import *
 import game_framework
+import play_mode
 
 img = None
 
@@ -23,8 +24,7 @@ def handle_events():
             if event.key == SDLK_ESCAPE:
                 game_framework.quit()
             elif event.key == SDLK_SPACE:
-                # TODO: 게임 실행 화면(play_mode)으로 전환 - 아직 구현하지 않음
-                pass
+                game_framework.change_mode(play_mode)
 
 
 def update():
