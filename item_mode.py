@@ -33,4 +33,5 @@ def update():
 def render():
     clear_canvas()
     game_world.render()   # 멈춰 있는 게임 화면을 그대로 깔고
+    img.draw(400, 300)    # 그 위에 아이템 선택 이미지를 겹쳐 보여준다
     update_canvas()
